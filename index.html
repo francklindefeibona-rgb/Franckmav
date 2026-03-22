@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Centre de formation et services professionnels - Bureautique, Informatique, Bâtiment et Technologies">
-    <title>Centre Excellence Pro - Formation & Services</title>
+    <meta name="description" content="FaMaKo - Centre de Formation et Services Professionnels">
+    <meta name="keywords" content="formation, bureautique, informatique, bâtiment, FaMaKo">
+    <title>Franckmav| Centre de Formation & Services Professionnels</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -23,18 +27,626 @@
         }
 
         body {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
+        }
+
+        /* Custom Colors */
+        :root {
+            --primary: #e67e22;
+            --primary-dark: #d35400;
+            --secondary: #2c3e50;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+            --dark: #1a1a2e;
         }
 
         /* Navigation */
         .navbar {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
             padding: 15px 0;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
-        .navbar-brand {
+        .navbar.scrolled {
+            background: rgba(44, 62, 80, 0.98);
+            padding: 10px 0;
+        }
+
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #e67e22, #f39c12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo-text span:first-child {
+            color: #e67e22;
+        }
+
+        .logo-text span:last-child {
+            color: white;
+        }
+
+        .logo-sub {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #f39c12;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #e67e22;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #e67e22 !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 span {
+            color: #e67e22;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.3s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #e67e22, #f39c12);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(230,126,34,0.3);
+            color: white;
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: white;
+            padding: 12px 35px;
+            border-radius: 50px;
+            border: 2px solid #e67e22;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-left: 15px;
+        }
+
+        .btn-outline-custom:hover {
+            background: #e67e22;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #e67e22, #f39c12);
+            border-radius: 2px;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(230,126,34,0.2);
+        }
+
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(230,126,34,0.8), rgba(243,156,18,0.8));
+            opacity: 0;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card:hover .service-overlay {
+            opacity: 1;
+        }
+
+        .service-overlay i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: #e67e22;
+            margin-bottom: 15px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .service-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .service-list li i {
+            color: #e67e22;
+            margin-right: 10px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Team Section */
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 30px auto 20px;
+            border: 5px solid #e67e22;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: #e67e22;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #e67e22;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 80px 0;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+            height: 100%;
+        }
+
+        .contact-info i {
+            font-size: 2rem;
+            color: #e67e22;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span:first-child {
+            color: #e67e22;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            margin: 0 5px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 35px;
+            line-height: 60px;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .btn-outline-custom {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <div class="logo">
+                <div class="logo-icon">
+                    F<span style="font-size: 14px;">&</span>M
+                </div>
+                <div>
+                    <div class="logo-text">
+                        <span>Franck</span><span>Mav</span>
+                    </div>
+                    <div class="logo-sub">EXCELLENCE & PROFESSIONNALISME</div>
+                </div>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#bureautique">Bureautique</a></li>
+                <li class="nav-item"><a class="nav-link" href="#informatique">Informatique</a></li>
+                <li class="nav-item"><a class="nav-link" href="#batiment">Bâtiment</a></li>
+                <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="accueil" class="hero">
+    <div class="container hero-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 data-aos="fade-up"><span>FaMaKo</span><br>Votre Excellence au Quotidien</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Formation professionnelle & Services de qualité depuis 2015</p>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <a href="#contact" class="btn btn-primary-custom">Obtenir un devis</a>
+                    <a href="#services" class="btn btn-outline-custom">Nos services</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-6 stat-item" data-aos="fade-up">
+                <div class="stat-number">500+</div>
+                <div>Étudiants formés</div>
+            </div>
+            <div class="col-md-3 col-6 stat-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-number">1000+</div>
+                <div>Projets réalisés</div>
+            </div>
+            <div class="col-md-3 col-6 stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number">98%</div>
+                <div>Satisfaction client</div>
+            </div>
+            <div class="col-md-3 col-6 stat-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-number">24/7</div>
+                <div>Support disponible</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Formation Bureautique -->
+<section id="bureautique" class="py-5">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Formation Bureautique Complète</h2>
+        <div class="row">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3" alt="Microsoft Excel">
+                        <div class="service-overlay">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-file-excel service-icon"></i>
+                        <h3 class="service-title">Microsoft Excel Expert</h3>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check-circle"></i> Formules et fonctions avancées</li>
+                            <li><i class="fas fa-check-circle"></i> Tableaux croisés dynamiques</li>
+                            <li><i class="fas fa-check-circle"></i> Graphiques professionnels</li>
+                            <li><i class="fas fa-check-circle"></i> Macros VBA et automatisation</li>
+                            <li><i class="fas fa-check-circle"></i> Analyse de données et Power BI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3" alt="Microsoft Word">
+                        <div class="service-overlay">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-file-word service-icon"></i>
+                        <h3 class="service-title">Microsoft Word Pro</h3>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check-circle"></i> Mise en page professionnelle</li>
+                            <li><i class="fas fa-check-circle"></i> Styles et modèles personnalisés</li>
+                            <li><i class="fas fa-check-circle"></i> Publipostage avancé</li>
+                            <li><i class="fas fa-check-circle"></i> Création de rapports et thèses</li>
+                            <li><i class="fas fa-check-circle"></i> Corrections et révisions collaboratives</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3" alt="PowerPoint">
+                        <div class="service-overlay">
+                            <i class="fas fa-chalkboard"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-chalkboard service-icon"></i>
+                        <h3 class="service-title">PowerPoint & Outlook</h3>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check-circle"></i> Présentations animées percutantes</li>
+                            <li><i class="        .navbar-brand {
             font-size: 1.8rem;
             font-weight: bold;
             color: #fff !important;
@@ -644,9 +1256,9 @@
             </div>
             <div class="col-md-4 mb-4">
                 <h5>Contact</h5>
-                <p><i class="fas fa-phone"></i> +225 07 00 00 00 00</p>
+                <p><i class="fas fa-phone"></i>+23672039665</p>
                 <p><i class="fas fa-envelope"></i> contact@excellencepro.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Abidjan, Côte d'Ivoire</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bangui, République Centrafricaine</p>
             </div>
             <div class="col-md-4 mb-4">
                 <h5>Suivez-nous</h5>
