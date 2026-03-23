@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="FaMaKo - Centre de Formation et Services Professionnels">
     <meta name="keywords" content="formation, bureautique, informatique, bâtiment, FaMaKo">
-    <title>Franckmav| Centre de Formation & Services Professionnels</title>
+    <title>FranckMav | Centre de Formation & Services Professionnels</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +29,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
+            width: 100%;
         }
 
         /* Custom Colors */
@@ -60,6 +61,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .logo-icon {
@@ -139,25 +141,28 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
             position: relative;
+            padding: 120px 0 80px;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
+            width: 100%;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
             font-family: 'Montserrat', sans-serif;
             margin-bottom: 20px;
             animation: fadeInUp 1s ease;
+            word-wrap: break-word;
         }
 
         .hero h1 span {
@@ -165,11 +170,14 @@
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 30px;
             animation: fadeInUp 1s ease 0.3s;
             opacity: 0;
             animation-fill-mode: forwards;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @keyframes fadeInUp {
@@ -193,6 +201,7 @@
             transition: 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
+            display: inline-block;
         }
 
         .btn-primary-custom:hover {
@@ -210,6 +219,7 @@
             font-weight: 600;
             transition: 0.3s;
             margin-left: 15px;
+            display: inline-block;
         }
 
         .btn-outline-custom:hover {
@@ -227,6 +237,7 @@
             margin-bottom: 50px;
             position: relative;
             padding-bottom: 20px;
+            word-wrap: break-word;
         }
 
         .section-title::after {
@@ -258,7 +269,7 @@
         }
 
         .service-img {
-            height: 250px;
+            height: 220px;
             overflow: hidden;
             position: relative;
         }
@@ -308,7 +319,7 @@
         }
 
         .service-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 15px;
             color: #2c3e50;
@@ -322,6 +333,7 @@
         .service-list li {
             padding: 8px 0;
             border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
         }
 
         .service-list li i {
@@ -333,15 +345,16 @@
         .stats-section {
             background: linear-gradient(135deg, #2c3e50, #1a1a2e);
             color: white;
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .stat-item {
             text-align: center;
+            margin-bottom: 30px;
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             font-family: 'Montserrat', sans-serif;
         }
@@ -354,6 +367,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
             transition: 0.3s;
+            padding: 20px;
+            margin-bottom: 30px;
         }
 
         .team-card:hover {
@@ -365,7 +380,7 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 30px auto 20px;
+            margin: 0 auto 20px;
             border: 5px solid #e67e22;
         }
 
@@ -375,7 +390,7 @@
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 20px;
+            margin-bottom: 30px;
             text-align: center;
             position: relative;
         }
@@ -408,30 +423,36 @@
 
         .contact-form {
             background: white;
-            padding: 40px;
+            padding: 30px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .contact-info {
             background: linear-gradient(135deg, #2c3e50, #1a1a2e);
-            padding: 40px;
+            padding: 30px;
             border-radius: 20px;
             color: white;
             height: 100%;
         }
 
         .contact-info i {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #e67e22;
+            margin-right: 15px;
+            width: 30px;
+        }
+
+        .contact-info p {
             margin-bottom: 15px;
+            word-wrap: break-word;
         }
 
         /* Footer */
         .footer {
             background: #1a1a2e;
             color: white;
-            padding: 60px 0 20px;
+            padding: 50px 0 20px;
         }
 
         .footer-logo {
@@ -441,6 +462,16 @@
         }
 
         .footer-logo span:first-child {
+            color: #e67e22;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
             color: #e67e22;
         }
 
@@ -495,20 +526,151 @@
             color: white;
         }
 
-        @media (max-width: 768px) {
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 95%;
+            }
+        }
+
+        @media (max-width: 992px) {
             .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
                 font-size: 2rem;
             }
-            .hero p {
-                font-size: 1rem;
+            
+            .service-img {
+                height: 200px;
             }
-            .section-title {
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+            }
+            
+            .hero {
+                padding: 100px 20px 60px;
+                min-height: auto;
+            }
+            
+            .hero h1 {
                 font-size: 1.8rem;
             }
+            
+            .hero p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
             .btn-outline-custom {
                 margin-left: 0;
                 margin-top: 15px;
             }
+            
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+            }
+            
+            .service-title {
+                font-size: 1.2rem;
+            }
+            
+            .service-list li {
+                font-size: 0.85rem;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                margin-bottom: 30px;
+            }
+            
+            .footer {
+                text-align: center;
+            }
+            
+            .footer .col-md-4 {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .btn-primary-custom, .btn-outline-custom {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .service-card {
+                margin-bottom: 20px;
+            }
+            
+            .service-img {
+                height: 180px;
+            }
+            
+            .service-content {
+                padding: 20px;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+        }
+
+        /* Utility Classes */
+        .text-orange {
+            color: #e67e22;
+        }
+        
+        .bg-light-custom {
+            background-color: #f8f9fa;
+        }
+        
+        .py-5 {
+            padding-top: 60px !important;
+            padding-bottom: 60px !important;
+        }
+        
+        @media (max-width: 768px) {
+            .py-5 {
+                padding-top: 40px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            overflow-x: hidden;
+        }
+        
+        p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
     </style>
 </head>
@@ -550,7 +712,7 @@
 <section id="accueil" class="hero">
     <div class="container hero-content">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-12">
                 <h1 data-aos="fade-up"><span>FaMaKo</span><br>Votre Excellence au Quotidien</h1>
                 <p data-aos="fade-up" data-aos-delay="100">Formation professionnelle & Services de qualité depuis 2015</p>
                 <div data-aos="fade-up" data-aos-delay="200">
@@ -646,380 +808,10 @@
                         <h3 class="service-title">PowerPoint & Outlook</h3>
                         <ul class="service-list">
                             <li><i class="fas fa-check-circle"></i> Présentations animées percutantes</li>
-                            <li><i class="        .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #fff !important;
-        }
-
-        .nav-link {
-            color: #fff !important;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-link:hover {
-            color: #ffd700 !important;
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease 0.3s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 50px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            border-radius: 2px;
-        }
-
-        /* Service Cards */
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            margin-bottom: 30px;
-            height: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        .service-img {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 25px;
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: #2a5298;
-            margin-bottom: 15px;
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #1e3c72;
-        }
-
-        .service-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .service-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .service-list li i {
-            color: #28a745;
-            margin-right: 10px;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        /* Testimonials */
-        .testimonial-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 20px;
-            text-align: center;
-        }
-
-        .testimonial-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-
-        /* Contact Form */
-        .contact-section {
-            background: #f8f9fa;
-            padding: 80px 0;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .btn-custom {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            border: none;
-            transition: 0.3s;
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            color: white;
-        }
-
-        /* Footer */
-        .footer {
-            background: #1a1a2e;
-            color: white;
-            padding: 50px 0 20px;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #ffd700;
-            transform: translateY(-3px);
-        }
-
-        /* Floating WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 35px;
-            line-height: 60px;
-            z-index: 100;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <i class="fas fa-chalkboard-teacher"></i> Centre Excellence Pro
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="#bureautique">Bureautique</a></li>
-                <li class="nav-item"><a class="nav-link" href="#informatique">Informatique</a></li>
-                <li class="nav-item"><a class="nav-link" href="#batiment">Bâtiment</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<section id="accueil" class="hero">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>Centre Excellence Pro</h1>
-                <p>Formation professionnelle & Services de qualité</p>
-                <a href="#contact" class="btn btn-custom btn-lg">Obtenir un devis gratuit</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Stats Section -->
-<section class="stats-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-6 stat-item" data-aos="fade-up">
-                <div class="stat-number">500+</div>
-                <div>Étudiants formés</div>
-            </div>
-            <div class="col-md-3 col-6 stat-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="stat-number">1000+</div>
-                <div>Projets réalisés</div>
-            </div>
-            <div class="col-md-3 col-6 stat-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-number">98%</div>
-                <div>Satisfaction client</div>
-            </div>
-            <div class="col-md-3 col-6 stat-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-number">24/7</div>
-                <div>Support disponible</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Formation Bureautique -->
-<section id="bureautique" class="py-5">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Formation Bureautique Complète</h2>
-        <div class="row">
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3" alt="Microsoft Excel">
-                    </div>
-                    <div class="service-content">
-                        <i class="fas fa-file-excel service-icon"></i>
-                        <h3 class="service-title">Microsoft Excel</h3>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check-circle"></i> Formules et fonctions avancées</li>
-                            <li><i class="fas fa-check-circle"></i> Tableaux croisés dynamiques</li>
-                            <li><i class="fas fa-check-circle"></i> Graphiques professionnels</li>
-                            <li><i class="fas fa-check-circle"></i> Macros VBA</li>
-                            <li><i class="fas fa-check-circle"></i> Analyse de données</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3" alt="Microsoft Word">
-                    </div>
-                    <div class="service-content">
-                        <i class="fas fa-file-word service-icon"></i>
-                        <h3 class="service-title">Microsoft Word</h3>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check-circle"></i> Mise en page professionnelle</li>
-                            <li><i class="fas fa-check-circle"></i> Styles et modèles</li>
-                            <li><i class="fas fa-check-circle"></i> Publipostage</li>
-                            <li><i class="fas fa-check-circle"></i> Création de rapports</li>
-                            <li><i class="fas fa-check-circle"></i> Corrections et révisions</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3" alt="PowerPoint">
-                    </div>
-                    <div class="service-content">
-                        <i class="fas fa-chalkboard service-icon"></i>
-                        <h3 class="service-title">PowerPoint & Outlook</h3>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check-circle"></i> Présentations animées</li>
-                            <li><i class="fas fa-check-circle"></i> Gestion des emails</li>
-                            <li><i class="fas fa-check-circle"></i> Calendrier et tâches</li>
-                            <li><i class="fas fa-check-circle"></i> Collaboration d'équipe</li>
-                            <li><i class="fas fa-check-circle"></i> Templates professionnels</li>
+                            <li><i class="fas fa-check-circle"></i> Gestion professionnelle des emails</li>
+                            <li><i class="fas fa-check-circle"></i> Calendrier et gestion des tâches</li>
+                            <li><i class="fas fa-check-circle"></i> Collaboration d'équipe avancée</li>
+                            <li><i class="fas fa-check-circle"></i> Templates personnalisés</li>
                         </ul>
                     </div>
                 </div>
@@ -1029,7 +821,7 @@
 </section>
 
 <!-- Services Informatiques -->
-<section id="informatique" class="py-5 bg-light">
+<section id="informatique" class="py-5 bg-light-custom">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Services Informatiques</h2>
         <div class="row">
@@ -1037,15 +829,18 @@
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3" alt="Développement Web">
+                        <div class="service-overlay">
+                            <i class="fas fa-code"></i>
+                        </div>
                     </div>
                     <div class="service-content">
                         <i class="fas fa-code service-icon"></i>
                         <h3 class="service-title">Création de Sites Web</h3>
                         <ul class="service-list">
                             <li><i class="fas fa-check-circle"></i> Sites vitrine professionnels</li>
-                            <li><i class="fas fa-check-circle"></i> E-commerce avec paiement</li>
-                            <li><i class="fas fa-check-circle"></i> Sites responsives (mobile)</li>
-                            <li><i class="fas fa-check-circle"></i> SEO et référencement</li>
+                            <li><i class="fas fa-check-circle"></i> E-commerce avec paiement sécurisé</li>
+                            <li><i class="fas fa-check-circle"></i> Sites responsives (mobile first)</li>
+                            <li><i class="fas fa-check-circle"></i> SEO et référencement Google</li>
                             <li><i class="fas fa-check-circle"></i> Maintenance et hébergement</li>
                         </ul>
                     </div>
@@ -1055,15 +850,18 @@
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3" alt="Configuration PC">
+                        <div class="service-overlay">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
                     </div>
                     <div class="service-content">
                         <i class="fas fa-laptop service-icon"></i>
-                        <h3 class="service-title">Configuration PC & Répartition</h3>
+                        <h3 class="service-title">Configuration PC & Linux</h3>
                         <ul class="service-list">
-                            <li><i class="fas fa-check-circle"></i> Installation Windows 10/11</li>
-                            <li><i class="fas fa-check-circle"></i> Installation Linux (Ubuntu, Mint)</li>
+                            <li><i class="fas fa-check-circle"></i> Installation Windows 10/11 Pro</li>
+                            <li><i class="fas fa-check-circle"></i> Installation Linux (Ubuntu, Mint, Fedora)</li>
                             <li><i class="fas fa-check-circle"></i> Dual boot Windows/Linux</li>
-                            <li><i class="fas fa-check-circle"></i> Optimisation performance</li>
+                            <li><i class="fas fa-check-circle"></i> Optimisation et accélération PC</li>
                             <li><i class="fas fa-check-circle"></i> Répartition des ordinateurs</li>
                         </ul>
                     </div>
@@ -1073,16 +871,19 @@
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3" alt="Déblocage Téléphone">
+                        <div class="service-overlay">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
                     </div>
                     <div class="service-content">
                         <i class="fas fa-mobile-alt service-icon"></i>
-                        <h3 class="service-title">Déblocage Téléphone Android</h3>
+                        <h3 class="service-title">Déblocage Android</h3>
                         <ul class="service-list">
                             <li><i class="fas fa-check-circle"></i> Déblocage pattern/PIN/empreinte</li>
                             <li><i class="fas fa-check-circle"></i> Réinitialisation FRP (Google Account)</li>
-                            <li><i class="fas fa-check-circle"></i> Flashage firmware</li>
+                            <li><i class="fas fa-check-circle"></i> Flashage firmware et ROM</li>
                             <li><i class="fas fa-check-circle"></i> Déverrouillage réseau (SIM)</li>
-                            <li><i class="fas fa-check-circle"></i> Toutes marques (Samsung, Xiaomi...)</li>
+                            <li><i class="fas fa-check-circle"></i> Toutes marques (Samsung, Xiaomi, Huawei...)</li>
                         </ul>
                     </div>
                 </div>
@@ -1100,16 +901,19 @@
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3" alt="Maçonnerie">
+                        <div class="service-overlay">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
                     </div>
                     <div class="service-content">
                         <i class="fas fa-hard-hat service-icon"></i>
                         <h3 class="service-title">Maçonnerie Générale</h3>
                         <ul class="service-list">
-                            <li><i class="fas fa-check-circle"></i> Construction de murs</li>
-                            <li><i class="fas fa-check-circle"></i> Création de fondations</li>
-                            <li><i class="fas fa-check-circle"></i> Enduit et crépissage</li>
-                            <li><i class="fas fa-check-circle"></i> Carrelage et faïence</li>
-                            <li><i class="fas fa-check-circle"></i> Rénovation complète</li>
+                            <li><i class="fas fa-check-circle"></i> Construction de murs et cloisons</li>
+                            <li><i class="fas fa-check-circle"></i> Création de fondations solides</li>
+                            <li><i class="fas fa-check-circle"></i> Enduit et crépissage décoratif</li>
+                            <li><i class="fas fa-check-circle"></i> Carrelage et faïence sur mesure</li>
+                            <li><i class="fas fa-check-circle"></i> Rénovation complète intérieure</li>
                         </ul>
                     </div>
                 </div>
@@ -1118,16 +922,19 @@
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3" alt="Menuiserie">
+                        <div class="service-overlay">
+                            <i class="fas fa-tools"></i>
+                        </div>
                     </div>
                     <div class="service-content">
                         <i class="fas fa-tools service-icon"></i>
                         <h3 class="service-title">Menuiserie & Électricité</h3>
                         <ul class="service-list">
-                            <li><i class="fas fa-check-circle"></i> Pose de portes et fenêtres</li>
-                            <li><i class="fas fa-check-circle"></i> Installation de placards</li>
+                            <li><i class="fas fa-check-circle"></i> Pose de portes et fenêtres sur mesure</li>
+                            <li><i class="fas fa-check-circle"></i> Installation de placards et rangements</li>
                             <li><i class="fas fa-check-circle"></i> Installation électrique complète</li>
-                            <li><i class="fas fa-check-circle"></i> Mise aux normes</li>
-                            <li><i class="fas fa-check-circle"></i> Dépannage électrique</li>
+                            <li><i class="fas fa-check-circle"></i> Mise aux normes NF C 15-100</li>
+                            <li><i class="fas fa-check-circle"></i> Dépannage électrique 24/7</li>
                         </ul>
                     </div>
                 </div>
@@ -1136,14 +943,17 @@
                 <div class="service-card">
                     <div class="service-img">
                         <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3" alt="Plomberie et Peinture">
+                        <div class="service-overlay">
+                            <i class="fas fa-wrench"></i>
+                        </div>
                     </div>
                     <div class="service-content">
                         <i class="fas fa-wrench service-icon"></i>
                         <h3 class="service-title">Plomberie & Peinture</h3>
                         <ul class="service-list">
-                            <li><i class="fas fa-check-circle"></i> Installation sanitaire</li>
-                            <li><i class="fas fa-check-circle"></i> Réparation fuites d'eau</li>
-                            <li><i class="fas fa-check-circle"></i> Installation chauffe-eau</li>
+                            <li><i class="fas fa-check-circle"></i> Installation sanitaire complète</li>
+                            <li><i class="fas fa-check-circle"></i> Réparation fuites d'eau rapide</li>
+                            <li><i class="fas fa-check-circle"></i> Installation chauffe-eau et pompes</li>
                             <li><i class="fas fa-check-circle"></i> Peinture intérieure/extérieure</li>
                             <li><i class="fas fa-check-circle"></i> Papier peint et enduit décoratif</li>
                         </ul>
@@ -1154,48 +964,123 @@
     </div>
 </section>
 
+<!-- À Propos Section -->
+<section id="apropos" class="py-5 bg-light-custom">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Qui sommes-nous ?</h2>
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3" alt="FaMaKo Team" class="img-fluid rounded-4 shadow w-100">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <h3 class="mb-4">L'histoire de <span class="text-orange">FaMaKo</span></h3>
+                <p class="lead">FaMaKo, c'est l'union de deux passionnés : <strong>Francklin</strong> et <strong>Pamela</strong>.</p>
+                <p>Notre vision commune : offrir des services d'excellence dans les domaines de la formation bureautique, des services informatiques et des travaux de bâtiment.</p>
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-check-circle text-orange me-2"></i>
+                            <span>Expertise reconnue</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-check-circle text-orange me-2"></i>
+                            <span>Matériel de qualité</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-check-circle text-orange me-2"></i>
+                            <span>Service après-vente</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-check-circle text-orange me-2"></i>
+                            <span>Prix compétitifs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Team Section -->
+        <div class="row mt-5 pt-3">
+            <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Francklin" class="team-img">
+                    <h3>Francklin K.</h3>
+                    <p class="text-muted">Co-fondateur & Expert Informatique</p>
+                    <p>Spécialiste en développement web, configuration système et déblocage téléphone.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="team-card">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Pamela" class="team-img">
+                    <h3>Pamela M.</h3>
+                    <p class="text-muted">Co-fondatrice & Formatrice Bureautique</p>
+                    <p>Experte en formation Excel, Word et gestion de projets professionnels.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Témoignages -->
-<section class="py-5 bg-light">
+<section class="py-5">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Ce que disent nos clients</h2>
         <div class="row">
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="testimonial-card">
                     <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" class="testimonial-img">
-                    <h5>Marie K.</h5>
-                    <p class="text-muted">Formatrice Excel</p>
-                    <p>"Formation Excel exceptionnelle ! J'ai appris des astuces incroyables. Je recommande vivement."</p>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
+                    <h5>Marie Koné</h5>
+                    <p class="text-muted">Formatrice Excel certifiée</p>
+                    <p>"Grâce à FaMaKo, je maîtrise parfaitement Excel maintenant ! Formation de qualité."</p>
+                    <div class="mt-2">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="testimonial-card">
                     <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Client" class="testimonial-img">
-                    <h5>Jean P.</h5>
-                    <p class="text-muted">Rénovation maison</p>
-                    <p>"Travaux de rénovation complets réalisés avec professionnalisme et dans les délais. Merci !"</p>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
+                    <h5>Jean-Baptiste S.</h5>
+                    <p class="text-muted">Propriétaire maison</p>
+                    <p>"Rénovation complète de ma maison par l'équipe FaMaKo. Travail soigné et dans les délais."</p>
+                    <div class="mt-2">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="testimonial-card">
                     <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Client" class="testimonial-img">
-                    <h5>Ahmed T.</h5>
-                    <p class="text-muted">Dépannage informatique</p>
-                    <p>"Service rapide et efficace pour le déblocage de mon téléphone. Très satisfait !"</p>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
+                    <h5>Abdoulaye D.</h5>
+                    <p class="text-muted">Chef d'entreprise</p>
+                    <p>"Site web professionnel créé par FaMaKo. Mon entreprise a gagné en visibilité. Merci !"</p>
+                    <div class="mt-2">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1207,37 +1092,60 @@
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Contactez-nous</h2>
         <div class="row">
-            <div class="col-lg-6 mx-auto" data-aos="fade-up">
+            <div class="col-lg-5 mb-4" data-aos="fade-right">
+                <div class="contact-info">
+                    <h3 class="mb-4">FranckMav</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangui, République Centrafricaine</p>
+                    <p><i class="fas fa-phone"></i> +236 72 03 96 64</p>
+                    <p><i class="fas fa-envelope"></i> contact@famako.com</p>
+                    <p><i class="fas fa-clock"></i> Lun-Sam: 8h00 - 18h00</p>
+                    <hr class="my-4">
+                    <h5>Suivez-nous</h5>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
                 <div class="contact-form">
                     <form id="contactForm">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nom complet</label>
-                            <input type="text" class="form-control" id="name" required>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nom complet</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Téléphone</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Service souhaité</label>
+                                <select class="form-select" id="service">
+                                    <option>Formation bureautique</option>
+                                    <option>Création site web</option>
+                                    <option>Configuration PC/Linux</option>
+                                    <option>Déblocage téléphone</option>
+                                    <option>Maçonnerie</option>
+                                    <option>Menuiserie/Électricité</option>
+                                    <option>Plomberie/Peinture</option>
+                                    <option>Autre service</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Téléphone</label>
-                            <input type="tel" class="form-control" id="phone">
-                        </div>
-                        <div class="mb-3">
-                            <label for="service" class="form-label">Service souhaité</label>
-                            <select class="form-select" id="service">
-                                <option>Formation bureautique</option>
-                                <option>Création site web</option>
-                                <option>Configuration PC/Linux</option>
-                                <option>Déblocage téléphone</option>
-                                <option>Travaux de bâtiment</option>
-                                <option>Autre service</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
+                            <label class="form-label">Message</label>
                             <textarea class="form-control" id="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-custom w-100">Envoyer le message</button>
+                        <button type="submit" class="btn btn-primary-custom w-100">Envoyer le message</button>
                     </form>
                     <div id="formMessage" class="mt-3"></div>
                 </div>
@@ -1251,34 +1159,39 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-4">
-                <h5>Centre Excellence Pro</h5>
+                <div class="footer-logo">
+                    <span>Franck</span><span>Mav</span>
+                </div>
                 <p>Votre partenaire de confiance pour la formation et les services professionnels depuis 2015.</p>
             </div>
             <div class="col-md-4 mb-4">
-                <h5>Contact</h5>
-                <p><i class="fas fa-phone"></i>+23672039665</p>
-                <p><i class="fas fa-envelope"></i> contact@excellencepro.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Bangui, République Centrafricaine</p>
+                <h5>Liens rapides</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#accueil">Accueil</a></li>
+                    <li class="mb-2"><a href="#bureautique">Formation bureautique</a></li>
+                    <li class="mb-2"><a href="#informatique">Services informatiques</a></li>
+                    <li class="mb-2"><a href="#batiment">Travaux bâtiment</a></li>
+                    <li class="mb-2"><a href="#contact">Contact</a></li>
+                </ul>
             </div>
             <div class="col-md-4 mb-4">
-                <h5>Suivez-nous</h5>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                <h5>Newsletter</h5>
+                <p>Recevez nos offres et promotions</p>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Votre email">
+                    <button class="btn btn-primary-custom" type="button">S'abonner</button>
                 </div>
             </div>
         </div>
-        <hr>
+        <hr class="my-4">
         <div class="text-center">
-            <p>&copy; 2024 Centre Excellence Pro - Tous droits réservés</p>
+            <p>&copy; 2026 FranckMav - Tous droits réservés | Créé avec <i class="fas fa-heart text-danger"></i> par Francklin</p>
         </div>
     </div>
 </footer>
 
 <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/2250700000000?text=Bonjour%2C%20je%20souhaite%20obtenir%20plus%20d%27informations" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/23672039664?text=Bonjour%20FaMaKo%2C%20je%20souhaite%20obtenir%20plus%20d%27informations%20sur%20vos%20services" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -1290,6 +1203,16 @@
     AOS.init({
         duration: 1000,
         once: true
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 
     // Smooth scrolling
@@ -1316,12 +1239,11 @@
             submitBtn.textContent = 'Envoi en cours...';
             submitBtn.disabled = true;
             
-            // Simulate form submission
             setTimeout(() => {
                 const messageDiv = document.getElementById('formMessage');
                 messageDiv.innerHTML = `
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        Message envoyé avec succès ! Nous vous contacterons rapidement.
+                        <i class="fas fa-check-circle"></i> Message envoyé avec succès ! Un conseiller FaMaKo vous contactera rapidement.
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     </div>
                 `;
@@ -1329,7 +1251,6 @@
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 
-                // Auto hide message after 5 seconds
                 setTimeout(() => {
                     const alert = messageDiv.querySelector('.alert');
                     if (alert) alert.classList.remove('show');
@@ -1338,16 +1259,16 @@
         });
     }
 
-    // Navbar background change on scroll
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.style.background = 'linear-gradient(135deg, #0f2b4f 0%, #1a3a6b 100%)';
-            navbar.style.backdropFilter = 'blur(10px)';
-        } else {
-            navbar.style.background = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)';
-            navbar.style.backdropFilter = 'none';
-        }
+    // Fix for mobile menu close after click
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
     });
 </script>
 </body>
